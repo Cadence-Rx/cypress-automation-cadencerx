@@ -1,0 +1,24 @@
+{
+  "name": "cypress-automation-cadencerx",
+  "version": "1.0.0",
+  "description": "Cypress Cucumber Automation framework for Cadence Rx",
+  "main": "index.js",
+  "repository": "https://github.com/Cadence-Rx/cypress-automation-cadencerx.git",
+  "author": "Latunji Asgill <lasgill@cadencerx.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
+    "cypress": "^15.3.0",
+    "ts-loader": "^9.5.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/support/step_definitions/*.ts",
+      "cypress/support/step_definitions/*.js "
+    ]
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.1"
+  }
+}
