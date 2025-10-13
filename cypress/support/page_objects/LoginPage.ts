@@ -1,3 +1,4 @@
+import { data } from "cypress/types/jquery";
 import BasePage from "./Base-PageObject";
 
 class LoginPage extends BasePage {
@@ -17,8 +18,13 @@ class LoginPage extends BasePage {
         this.elementsLoginPage.usernameInput().type(username);
     }   
 
-    enterPassword(password: string) {  
-        this.elementsLoginPage.passwordInput().type(password);
+    enterPassword(password: string) {
+        const today: Date = new Date();
+        const dateString: string = today.toDateString();
+        let month = dateString.split(" ")[1];
+        let day = dateString.split(" ")[2];
+        let pwd = "Cinnadust" + month + day + "@Anthony"; 
+        this.elementsLoginPage.passwordInput().type(pwd);
     }
 
     clickLoginButton() {
@@ -28,6 +34,7 @@ class LoginPage extends BasePage {
     verifyLoginSuccess() {
         this.elementsLoginPage.myAuthorizationBtn().should("be.visible");
         this.elementsLoginPage.myAuthorizationBtn().should("exist");
+        this.elementsLoginPage.loginerrorMessage().should("not.exist");
     }
 
     

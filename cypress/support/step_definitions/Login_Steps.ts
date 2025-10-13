@@ -1,11 +1,10 @@
 import { defineStep as And, Given, When, Then} from "@badeball/cypress-cucumber-preprocessor";
-import Cypress from "cypress";  
 import loginPage from "../page_objects/LoginPage";
 
 
 
 Given('I navigate to the Opus application', () => {
-    cy.visit("https://opus.cadencerx.com");
+    loginPage.navigateToOpusLoginPage();
 });
 
 

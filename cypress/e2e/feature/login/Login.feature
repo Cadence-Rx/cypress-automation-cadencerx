@@ -10,9 +10,12 @@ Feature: Opus Login Functionality
         Then I should be logged in successfully
 
         Examples:
-            | username                    | password               | 
-            | aarcher2@strategiccomp.com  | CinnadustOct10@Anthony | 
-            | TRENT_LINVILLE@PMAGROUP.COM | CinnadustOct10@Anthony | 
+            | username                    | password  |
+            | aarcher2@strategiccomp.com  | password1 |
+            | TRENT_LINVILLE@PMAGROUP.COM | password2 |
+            # | TRENT_LINVILLE@PMAGROUP.COM | CinnadustOct13@Anthony |
+
+
 
 #   @invalidLogin
 #   Scenario: User should not be able to login with invalid credentials
