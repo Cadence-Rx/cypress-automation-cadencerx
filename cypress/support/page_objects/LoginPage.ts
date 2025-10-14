@@ -23,8 +23,9 @@ class LoginPage extends BasePage {
         let dateString: string = today.toDateString();
         let month: string  = dateString.split(" ")[1];
         let day: string = dateString.split(" ")[2];
-        let pwd: string = "Cinnadust" + month + day + "@Anthony"; 
-        this.elementsLoginPage.passwordInput().type(pwd);
+        // let pwd: string = "Cinnadust" + month + day + "@Anthony"; 
+        let pwd1: string = `Cinnadust${month}${day}@Anthony`; 
+        this.elementsLoginPage.passwordInput().type(pwd1);
     }
 
     clickLoginButton() {
