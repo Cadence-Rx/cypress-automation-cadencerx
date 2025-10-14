@@ -19,11 +19,11 @@ class LoginPage extends BasePage {
     }   
 
     enterPassword(password: string) {
-        const today: Date = new Date();
-        const dateString: string = today.toDateString();
-        let month = dateString.split(" ")[1];
-        let day = dateString.split(" ")[2];
-        let pwd = "Cinnadust" + month + day + "@Anthony"; 
+        let today: Date = new Date();
+        let dateString: string = today.toDateString();
+        let month: string  = dateString.split(" ")[1];
+        let day: string = dateString.split(" ")[2];
+        let pwd: string = "Cinnadust" + month + day + "@Anthony"; 
         this.elementsLoginPage.passwordInput().type(pwd);
     }
 
