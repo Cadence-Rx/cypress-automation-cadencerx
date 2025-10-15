@@ -22,10 +22,10 @@ class LoginPage extends BasePage {
         let today: Date = new Date();
         let dateString: string = today.toDateString();
         let month: string  = dateString.split(" ")[1];
-        let day: string = dateString.split(" ")[2];
-        // let pwd: string = "Cinnadust" + month + day + "@Anthony"; 
-        let pwd1: string = `Cinnadust${month}${day}@Anthony`; 
-        this.elementsLoginPage.passwordInput().type(pwd1);
+        let day: number = parseInt(dateString.split(" ")[2]);
+        let pwd: string = `Cinnadust${month}${day}@Anthony`; 
+        console.log(`Month and Day = ${month}${day}`);
+        this.elementsLoginPage.passwordInput().type(pwd);
     }
 
     clickLoginButton() {
