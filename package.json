@@ -9,6 +9,7 @@
   "private": false,
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
+    "@faker-js/faker": "^10.1.0",
     "cypress": "^15.3.0",
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.3"
