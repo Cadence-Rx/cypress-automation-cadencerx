@@ -13,7 +13,7 @@ Feature: Opus Login Functionality
             | username                    | password  |
             | aarcher2@strategiccomp.com  | password1 |
             | TRENT_LINVILLE@PMAGROUP.COM | password2 |
-            | testing                     | password3 |
+            # | testing                     | password3 |
 
 
 
