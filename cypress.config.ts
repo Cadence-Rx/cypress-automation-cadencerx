@@ -6,7 +6,7 @@ import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild
 
 export default defineConfig({
   retries: {
-    runMode: 3,
+    runMode: 2,
     openMode: 1,
   },
   e2e: {
