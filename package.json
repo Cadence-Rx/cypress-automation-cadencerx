@@ -47,6 +47,7 @@
     "contact-us-feature": "cypress run --browser chrome --spec 'cypress/e2e/**/Contact_Us.feature' || npm run posttest",
     "contact-us-tag": "cypress run -e TAGS=\"@contact-us\" --browser chrome || npm run posttest",
     "login-tag": "cypress run -e TAGS=\"@login\" --browser chrome || npm run posttest",
+    "login-pass": "cypress run -e TAGS=\"@login\" --browser chrome; npm run posttest",
     "login-and-smoke-tags": "cypress run -e TAGS=\"@login or @smoke\" --browser chrome || npm run posttest",
     "smoke-tag": "cypress run -e TAGS=\"@smoke\" --browser chrome || npm run posttest",
     "regression-tag": "cypress run -e TAGS=\"@regression and not @smoke\" --browser chrome",
