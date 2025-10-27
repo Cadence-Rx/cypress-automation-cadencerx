@@ -17,6 +17,6 @@ And("I click on the login button", () => {
     loginPage.clickLoginButton();
 });
 
-Then("I should be logged in successfully", () => {
+Then("I should be successfully logged in and navigated to the Authorization tab of the OPUS Dashboard", () => {
     loginPage.verifyLoginSuccess();
 });
