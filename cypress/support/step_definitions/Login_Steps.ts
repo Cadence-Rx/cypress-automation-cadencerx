@@ -1,6 +1,5 @@
 import { defineStep as And, Given, When, Then} from "@badeball/cypress-cucumber-preprocessor";
 import loginPage from "../page_objects/LoginPage";
-import { faker } from "@faker-js/faker/.";
 
 
 
@@ -28,8 +27,7 @@ When('I click on the {string} link', (linkText: string) => {
 }); 
 
 When('I enter an invalid username or password', () => {
-    const invalidUserName: string = faker.internet.email();
-    loginPage.enterInvalidCredentials(invalidUserName);
+    loginPage.enterInvalidCredentials('test@email.com');
 });
 
 
