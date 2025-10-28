@@ -8,6 +8,7 @@ class LoginPage extends BasePage {
         loginButton: () => cy.get("input#loginButton"),
         myAuthorizationBtn: () => cy.get("a.btn.btn-primary.btn-sm.authRefreshButton.authRefreshButtonMy"),
         loginerrorMessage: () => cy.get("div.text-danger.validation-summary-errorss"),
+        forgotPasswordLink: () => cy.get("a[href='/Account/ForgotPassword']")
     };
 
     navigateToOpusLoginPage() {
@@ -36,6 +37,20 @@ class LoginPage extends BasePage {
         this.elementsLoginPage.myAuthorizationBtn().should("be.visible");
         this.elementsLoginPage.myAuthorizationBtn().should("exist");
         this.elementsLoginPage.loginerrorMessage().should("not.exist");
+    }
+
+    clickForgotPasswordLink() {``
+        this.elementsLoginPage.forgotPasswordLink().click();
+    }   
+
+    enterInvalidCredentials(invalidEmail: string) {
+        this.elementsLoginPage.usernameInput().type(invalidEmail);
+        this.elementsLoginPage.passwordInput().type('worngPassword123!');
+    }
+
+    verifyInvalidCredentialsErrorMessage(invalidCredentials: string) {
+        this.elementsLoginPage.loginerrorMessage().should("be.visible");
+        this.elementsLoginPage.loginerrorMessage().should("contain.text", invalidCredentials);
     }
 
     

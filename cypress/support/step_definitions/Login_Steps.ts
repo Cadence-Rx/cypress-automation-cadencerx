@@ -1,5 +1,6 @@
 import { defineStep as And, Given, When, Then} from "@badeball/cypress-cucumber-preprocessor";
 import loginPage from "../page_objects/LoginPage";
+import { faker } from "@faker-js/faker/.";
 
 
 
@@ -23,7 +24,17 @@ Then("I should be successfully logged in and navigated to the Authorization tab 
 
 
 When('I click on the {string} link', (linkText: string) => {
-    
+    loginPage.clickForgotPasswordLink();
 }); 
+
+When('I enter an invalid username or password', () => {
+    const invalidUserName: string = faker.internet.email();
+    loginPage.enterInvalidCredentials(invalidUserName);
+});
+
+
+Then('I should see an error message indicating {string}', (errorMessage: string) => {
+    loginPage.verifyInvalidCredentialsErrorMessage(errorMessage);
+});
 
 
