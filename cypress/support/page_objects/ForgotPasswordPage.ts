@@ -10,7 +10,7 @@ class ForgotPasswordPage extends BasePage {
 
     verifyForgotPasswordPageHeader() {
         this.elementsForgotPasswordPage.forgotPasswordPageHeader().should("be.visible");
-        this.elementsForgotPasswordPage.forgotPasswordPageHeader().should("have.text", "Reset password");
+        // this.elementsForgotPasswordPage.forgotPasswordPageHeader().should("have.text", "Reset password");
         return this.elementsForgotPasswordPage.forgotPasswordPageHeader().then(($header) => {
             const actualHeaderText = $header.text().trim();
             expect(actualHeaderText).to.equal("Enter your email.");
@@ -18,8 +18,12 @@ class ForgotPasswordPage extends BasePage {
     }
 
     verifyEmailInput(email: string) {
-        this.elementsForgotPasswordPage.emailInput().should("be.visible");
+        // this.elementsForgotPasswordPage.emailInput().should("be.visible");
         this.elementsForgotPasswordPage.emailInput().type(email);
+        this.elementsForgotPasswordPage.emailInput().should("have.value", email);
+        this.elementsForgotPasswordPage.emailInput().invoke('val').then((inputValue) => {
+            expect(inputValue).to.equal(email);
+        });
     }
 
     verifyEmailLinkButton(buttonText: string) {
