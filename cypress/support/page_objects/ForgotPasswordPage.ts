@@ -8,6 +8,24 @@ class ForgotPasswordPage extends BasePage {
         confirmationMessage: () => cy.get("div.result"),
     };
 
+    verifyForgotPasswordPageHeader() {
+        this.elementsForgotPasswordPage.forgotPasswordPageHeader().should("be.visible");
+        this.elementsForgotPasswordPage.forgotPasswordPageHeader().should("have.text", "Reset password");
+        return this.elementsForgotPasswordPage.forgotPasswordPageHeader().then(($header) => {
+            const actualHeaderText = $header.text().trim();
+            expect(actualHeaderText).to.equal("Enter your email.");
+        })
+    }
+
+    verifyEmailInput(email: string) {
+        this.elementsForgotPasswordPage.emailInput().should("be.visible");
+        this.elementsForgotPasswordPage.emailInput().type(email);
+    }
+
+    verifyEmailLinkButton(buttonText: string) {
+        this.elementsForgotPasswordPage.emailButton().should("be.visible");
+        this.elementsForgotPasswordPage.emailButton().should("have.value", buttonText);
+    }
 }
 
 
