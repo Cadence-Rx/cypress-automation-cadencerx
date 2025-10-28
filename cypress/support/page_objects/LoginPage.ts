@@ -7,7 +7,7 @@ class LoginPage extends BasePage {
         passwordInput: () => cy.get("input#Password"),
         loginButton: () => cy.get("input#loginButton"),
         myAuthorizationBtn: () => cy.get("a.btn.btn-primary.btn-sm.authRefreshButton.authRefreshButtonMy"),
-        loginerrorMessage: () => cy.get("div.text-danger.validation-summary-errorss"),
+        loginerrorMessage: () => cy.get("div.text-danger.validation-summary-errors ul li"),
         forgotPasswordLink: () => cy.get("a[href='/Account/ForgotPassword']")
     };
 

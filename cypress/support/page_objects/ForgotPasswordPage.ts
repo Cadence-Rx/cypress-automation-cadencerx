@@ -14,7 +14,7 @@ class ForgotPasswordPage extends BasePage {
         return this.elementsForgotPasswordPage.forgotPasswordPageHeader().then(($header) => {
             const actualHeaderText = $header.text().trim();
             expect(actualHeaderText).to.equal("Enter your email.");
-        })
+        });
     }
 
     verifyEmailInput(email: string) {
