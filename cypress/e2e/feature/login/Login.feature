@@ -15,6 +15,18 @@ Feature: Opus Login Functionality
             | TRENT_LINVILLE@PMAGROUP.COM | password2 |
             # | testing                     | password3 |
 
+    Scenario: Forgot password link navigation
+        When I click on the "Forgot Password?" link
+        Then I should be navigated to the password recovery page
+        And I should be able to enter in my email address to reset password
+
+
+
+    Scenario: User should not be able to login with invalid credentials
+        When I enter an invalid username or password
+        And I click on the login button
+        Then I should see an error message indicating invalid credentials
+
 
 
 #   @invalidLogin

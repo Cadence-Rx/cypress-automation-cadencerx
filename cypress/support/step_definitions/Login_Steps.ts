@@ -20,3 +20,10 @@ And("I click on the login button", () => {
 Then("I should be successfully logged in and navigated to the Authorization tab of the OPUS Dashboard", () => {
     loginPage.verifyLoginSuccess();
 });
+
+
+When('I click on the {string} link', (linkText: string) => {
+    
+}); 
+
+
