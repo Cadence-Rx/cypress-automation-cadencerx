@@ -13,7 +13,6 @@ Feature: Opus Login Functionality
             | username                    | password  |
             | aarcher2@strategiccomp.com  | password1 |
             | TRENT_LINVILLE@PMAGROUP.COM | password2 |
-            # | testing                     | password3 |
 
     Scenario: Forgot password link navigation
         When I click on the "Forgot Password?" link
@@ -26,14 +25,6 @@ Feature: Opus Login Functionality
         When I enter an invalid username or password
         And I click on the login button
         Then I should see an error message indicating "Invalid login attempt"
-
-
-
-#   @invalidLogin
-#   Scenario: User should not be able to login with invalid credentials
-#     When I enter an invalid username or password
-#     And I click on the login button
-#     Then I should see an error message indicating invalid credentials
 
 #   @emptyFields
 #   Scenario: User should not be able to login with empty fields

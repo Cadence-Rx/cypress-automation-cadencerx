@@ -19,6 +19,7 @@ And("I click on the login button", () => {
 
 Then("I should be successfully logged in and navigated to the Authorization tab of the OPUS Dashboard", () => {
     loginPage.verifyLoginSuccess();
+    cy.screenshot('Login_Successful', { capture: 'viewport' });
 });
 
 
@@ -33,6 +34,7 @@ When('I enter an invalid username or password', () => {
 
 Then('I should see an error message indicating {string}', (errorMessage: string) => {
     loginPage.verifyInvalidCredentialsErrorMessage(errorMessage);
+    cy.screenshot('Invalid login attempt', { capture: 'viewport' });
 });
 
 
