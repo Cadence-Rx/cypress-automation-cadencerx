@@ -18,7 +18,6 @@ class ForgotPasswordPage extends BasePage {
     }
 
     verifyEmailInput(email: string) {
-        // this.elementsForgotPasswordPage.emailInput().should("be.visible");
         this.elementsForgotPasswordPage.emailInput().type(email);
         this.elementsForgotPasswordPage.emailInput().should("have.value", email);
         this.elementsForgotPasswordPage.emailInput().invoke('val').then((inputValue) => {

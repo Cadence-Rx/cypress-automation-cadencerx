@@ -35,11 +35,11 @@ class LoginPage extends BasePage {
 
     verifyLoginSuccess() {
         this.elementsLoginPage.myAuthorizationBtn().should("be.visible");
-        this.elementsLoginPage.myAuthorizationBtn().should("exist");
-        this.elementsLoginPage.loginerrorMessage().should("not.exist");
+         this.elementsLoginPage.loginerrorMessage().should("not.exist");
+        this.elementsLoginPage.myAuthorizationBtn().should("exist").scrollIntoView();
     }
 
-    clickForgotPasswordLink() {``
+    clickForgotPasswordLink() {
         this.elementsLoginPage.forgotPasswordLink().click();
     }   
 
@@ -53,7 +53,6 @@ class LoginPage extends BasePage {
         this.elementsLoginPage.loginerrorMessage().should("contain.text", invalidCredentials);
     }
 
-    
 }
 const loginPage = new LoginPage();
 export default loginPage;
