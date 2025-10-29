@@ -17,12 +17,6 @@ And("I click on the login button", () => {
     loginPage.clickLoginButton();
 });
 
-Then("I should be successfully logged in and navigated to the Authorization tab of the OPUS Dashboard", () => {
-    loginPage.verifyLoginSuccess();
-    cy.screenshot('Login_Successful', { capture: 'runner' });
-});
-
-
 When('I click on the {string} link', (linkText: string) => {
     loginPage.clickForgotPasswordLink();
 }); 
