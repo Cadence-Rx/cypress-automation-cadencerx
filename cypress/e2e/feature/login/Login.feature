@@ -7,21 +7,24 @@ Feature: Opus Login Functionality
     Scenario Outline: User should be able to login with valid credentials
         When I enter a valid username '<username>' and password '<password>'
         And I click on the login button
-        Then I should be logged in successfully
+        Then I should be successfully logged in and navigated to the Authorization tab of the OPUS Dashboard
 
         Examples:
             | username                    | password  |
             | aarcher2@strategiccomp.com  | password1 |
             | TRENT_LINVILLE@PMAGROUP.COM | password2 |
-            # | testing                     | password3 |
+
+    Scenario: Forgot password link navigation
+        When I click on the "Forgot Password?" link
+        Then I should be navigated to the password recovery page
+        And I should be able to enter in my email address to reset password
 
 
 
-#   @invalidLogin
-#   Scenario: User should not be able to login with invalid credentials
-#     When I enter an invalid username or password
-#     And I click on the login button
-#     Then I should see an error message indicating invalid credentials
+    Scenario: User should not be able to login with invalid credentials
+        When I enter an invalid username or password
+        And I click on the login button
+        Then I should see an error message indicating "Invalid login attempt"
 
 #   @emptyFields
 #   Scenario: User should not be able to login with empty fields

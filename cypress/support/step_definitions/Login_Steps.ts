@@ -17,6 +17,18 @@ And("I click on the login button", () => {
     loginPage.clickLoginButton();
 });
 
-Then("I should be logged in successfully", () => {
-    loginPage.verifyLoginSuccess();
+When('I click on the {string} link', (linkText: string) => {
+    loginPage.clickForgotPasswordLink();
+}); 
+
+When('I enter an invalid username or password', () => {
+    loginPage.enterInvalidCredentials('test@email.com');
 });
+
+
+Then('I should see an error message indicating {string}', (errorMessage: string) => {
+    loginPage.verifyInvalidCredentialsErrorMessage(errorMessage);
+    cy.screenshot('Invalid login attempt', { capture: 'runner' });
+});
+
+
