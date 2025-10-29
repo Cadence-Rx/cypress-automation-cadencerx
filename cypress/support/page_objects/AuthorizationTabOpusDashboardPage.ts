@@ -3,7 +3,7 @@ import BasePage from "./Base-PageObject";
 class AuthorizationTabOpusDashboardPage extends BasePage {
     elementsAuthorizationTabOpusDashboardPage = {
         authorizationTab: () => cy.get("a[href='#transaction-details']"),
-        myAuthorizationTab: () => cy.get("a.btn.btn-white.border.btn-sm.authRefreshButton.authRefreshButtonMy"),
+        myAuthorizationTab: () => cy.get("a.btn.btn-primary.btn-sm.authRefreshButton.authRefreshButtonMy"),
     };
 
     verifyAuthorizationTabIsActive() {
