@@ -19,7 +19,7 @@ class LoginPage extends BasePage {
         this.elementsLoginPage.usernameInput().type(username);
     }   
 
-    enterPassword(password: string) {
+    enterPassword() {
         let today: Date = new Date();
         let dateString: string = today.toDateString();
         let month: string = dateString.split(" ")[1];
@@ -35,7 +35,7 @@ class LoginPage extends BasePage {
 
     verifyLoginSuccess() {
         this.elementsLoginPage.myAuthorizationBtn().should("be.visible");
-         this.elementsLoginPage.loginerrorMessage().should("not.exist");
+        this.elementsLoginPage.loginerrorMessage().should("not.exist");
         this.elementsLoginPage.myAuthorizationBtn().should("exist").scrollIntoView();
     }
 
