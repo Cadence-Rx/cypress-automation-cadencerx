@@ -9,3 +9,18 @@ Then("I should be successfully logged in and navigated to the Authorization tab 
     authorizationTabOpusDashboardPage.verifyMyAuthorizationTabIsVisible();
     cy.screenshot('Login_Successful', { capture: 'runner' });
 });
+
+
+And('I click the All Tab on the OPUS Dashboard', () => {
+    authorizationTabOpusDashboardPage.clickAllTab();
+}); 
+
+And('I select "Member ID" from the Column chooser dropdown', () => {
+    authorizationTabOpusDashboardPage.selectMemberIDFromColumnChooser('Member ID');
+}); 
+
+And('I obtain Member ID from Authorization tab of the OPUS Dashboard', () => {
+    authorizationTabOpusDashboardPage.obtainMemberIDs().then((memberIDs) => {
+        cy.log('Obtained Member IDs:', memberIDs);
+    });
+}); 
