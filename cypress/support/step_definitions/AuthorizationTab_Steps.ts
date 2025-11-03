@@ -15,8 +15,8 @@ And('I click the All Tab on the OPUS Dashboard', () => {
     authorizationTabOpusDashboardPage.clickAllTab();
 }); 
 
-And('I select "Member ID" from the Column chooser dropdown', () => {
-    authorizationTabOpusDashboardPage.selectMemberIDFromColumnChooser('Member ID');
+And('I select {string} from the Column chooser dropdown', (columnName: string) => {
+    authorizationTabOpusDashboardPage.selectMemberIDFromColumnChooser(columnName);
 }); 
 
 And('I obtain Member ID from Authorization tab of the OPUS Dashboard', () => {
