@@ -8,7 +8,7 @@ class PARequestSummaryPage extends BasePage {
 
     verifyMemberIDInPARequestSummary(expectedMemberID: string) {
         return this.elementsPARequestSummaryPage.patientMemberID().then(($ID) => {
-            const actualMemberID = $ID.text().trim();
+            const actualMemberID = $ID.text().split('ID')[1].trim();
             expect(actualMemberID).to.equal(expectedMemberID);
         });
     }
