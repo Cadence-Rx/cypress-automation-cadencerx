@@ -1,4 +1,3 @@
-import { invoke } from "cypress/types/lodash";
 import BasePage from "./Base-PageObject";
 
 class PatientTabOpusDashboardPage extends BasePage {
@@ -25,7 +24,6 @@ class PatientTabOpusDashboardPage extends BasePage {
     }
 
     verifyPatientListContainsMemberID(expectedMemberID: string) {
-        cy.wait(2000); // Wait for 2 seconds to ensure the list is updated
         return this.elementsPatientTabOpusDashboardPage.lstMemberIDs().eq(1).then(($cells) => {
             const actualMemberIDs: string = $cells.text().trim();
             expect(actualMemberIDs).to.equal(expectedMemberID);
