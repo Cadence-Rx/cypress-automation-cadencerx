@@ -10,7 +10,12 @@ Given('I navigate to the Opus application', () => {
 
 When("I enter a valid username {string} and password {string}", (username: string, password: string) => {
     loginPage.enterUsername(username.trim());
-    loginPage.enterPassword(password.trim());
+    loginPage.enterPassword();
+});
+
+And('I enter with valid credentials for {string} user', (email: string) => {
+    loginPage.enterUsername(email.trim());
+    loginPage.enterPassword();
 });
 
 And("I click on the login button", () => {

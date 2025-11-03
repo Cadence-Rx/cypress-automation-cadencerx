@@ -19,13 +19,14 @@ class LoginPage extends BasePage {
         this.elementsLoginPage.usernameInput().type(username);
     }   
 
-    enterPassword(password: string) {
+    enterPassword() {
         let today: Date = new Date();
         let dateString: string = today.toDateString();
         let month: string = dateString.split(" ")[1];
         let day: number = parseInt(dateString.split(" ")[2]);
-        let pwd: string = `Cinnadust${month}${day}@Anthony`; 
-        console.log(`Month and Day = ${month}${day}`);
+        let dayFormatted: string = day < 10 ? `0${day}` : `${day}`;
+        let pwd: string = `Cinnadust${month}${dayFormatted}@Anthony`;
+        console.log(`Month and Day = ${month}${dayFormatted}`);
         this.elementsLoginPage.passwordInput().type(pwd);
     }
 
@@ -35,7 +36,7 @@ class LoginPage extends BasePage {
 
     verifyLoginSuccess() {
         this.elementsLoginPage.myAuthorizationBtn().should("be.visible");
-         this.elementsLoginPage.loginerrorMessage().should("not.exist");
+        this.elementsLoginPage.loginerrorMessage().should("not.exist");
         this.elementsLoginPage.myAuthorizationBtn().should("exist").scrollIntoView();
     }
 
