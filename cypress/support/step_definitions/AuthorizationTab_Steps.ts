@@ -7,7 +7,6 @@ beforeEach(() => {
 });
 
 Then("I should be successfully logged in and navigated to the Authorization tab of the OPUS Dashboard", () => {
-    // loginPage.verifyLoginSuccess();
     authorizationTabOpusDashboardPage.verifyAuthorizationTabIsActive();
     authorizationTabOpusDashboardPage.verifyMyAuthorizationTabIsVisible();
     cy.screenshot('Login_Successful', { capture: 'runner' });
