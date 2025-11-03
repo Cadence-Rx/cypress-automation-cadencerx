@@ -4,14 +4,15 @@ import patientTabOpusDashboardPage from "../page_objects/PatientTabOpusDashboard
 let obtainedMemberID: string;
 
 When('I click on the Patient tab of the OPUS Dashboard', () => {
+    patientTabOpusDashboardPage
 
 });
 
 And('I enter Member ID obtained in the search field', () => {
     cy.fixture('memberIDs').then(($memberIDData) => {
-            obtainedMemberID = $memberIDData.memberID1;
-            patientTabOpusDashboardPage.typePatientSearch(obtainedMemberID);
-        });
+        obtainedMemberID = $memberIDData.memberID1;
+        patientTabOpusDashboardPage.typePatientSearch(obtainedMemberID);
+    });
 });
 
 Then('I should see a list of patients with matching Member ID', () => {

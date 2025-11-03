@@ -1,7 +1,10 @@
 import { defineStep as And, Given, When, Then} from "@badeball/cypress-cucumber-preprocessor";
 import authorizationTabOpusDashboardPage from "../page_objects/AuthorizationTabOpusDashboardPage";
 
-
+beforeEach(() => {
+    cy.intercept('https://opus-uat.cadencerx.com/Portal/PriorAuthorizations?filterContactId=-1&offset=300')
+    .as('getAuthorizations');
+});
 
 Then("I should be successfully logged in and navigated to the Authorization tab of the OPUS Dashboard", () => {
     // loginPage.verifyLoginSuccess();
@@ -16,6 +19,7 @@ And('I click the All Tab on the OPUS Dashboard', () => {
 }); 
 
 And('I select {string} from the Column chooser dropdown', (columnName: string) => {
+    cy.wait('@getAuthorizations');
     authorizationTabOpusDashboardPage.selectMemberIDFromColumnChooser(columnName);
 }); 
 
