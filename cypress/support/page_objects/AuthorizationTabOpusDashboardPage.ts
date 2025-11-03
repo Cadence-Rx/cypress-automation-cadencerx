@@ -4,10 +4,10 @@ class AuthorizationTabOpusDashboardPage extends BasePage {
     elementsAuthorizationTabOpusDashboardPage = {
         authorizationTab: () => cy.get("a[href='#transaction-details']"),
         myAuthorizationTab: () => cy.get("a.btn.btn-primary.btn-sm.authRefreshButton.authRefreshButtonMy"),
-        allTab: () => cy.get("a[href='#all']"),
-        columnButton: () => cy.get("button[title='Column Chooser']"),
-        lstMemeberIDs: () => cy.get("table#authorizationTable tbody tr td.memberIdColumn"),
-        lstColumnChooserOptions: () => cy.get("ul.dropdown-menu.column-chooser-menu li input[type='checkbox']"),
+        allTab: () => cy.get("a.btn.btn-white.border.btn-sm.authRefreshButton.authRefreshButtonAll"),
+        columnButton: () => cy.get("button#priorAuthGrid_columnchooser"),
+        lstMemeberIDs: () => cy.get("td.e-rowcell"),
+        lstColumnChooserOptions: () => cy.get("span.e-label"),
     };
 
     verifyAuthorizationTabIsActive() {
