@@ -16,4 +16,4 @@ Feature: Opus Patient Search Functionality
         And I enter Member ID obtained in the search field
         Then I should see a list of patients with matching Member ID
         When I click on the view Patient button
-        # Then I am redirected to the PA Request Summary page with the Patient Demographics tab active
+        Then I am redirected to the PA Request Summary page with the Patient Demographics tab active
