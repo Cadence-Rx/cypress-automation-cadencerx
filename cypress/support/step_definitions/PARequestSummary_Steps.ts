@@ -9,4 +9,5 @@ Then('I am redirected to the PA Request Summary page with the Patient Demographi
         paRequestSummaryPage.verifyMemberIDInPARequestSummary(obtainedMemberID);
     });
     paRequestSummaryPage.verifyPatientTabDemographicsIsActive();
+    cy.screenshot('PA_Request_Summary_Page', { capture: 'runner' });
 });

@@ -17,6 +17,7 @@ And('I enter Member ID obtained in the search field', () => {
 
 Then('I should see a list of patients with matching Member ID', () => {
     patientTabOpusDashboardPage.verifyPatientListContainsMemberID(obtainedMemberID);
+    cy.screenshot('Patient_Search_Result', { capture: 'runner' });
 });
 
 When('I click on the view Patient button', () => {
