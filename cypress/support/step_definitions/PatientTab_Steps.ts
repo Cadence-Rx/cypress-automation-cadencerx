@@ -4,7 +4,7 @@ import patientTabOpusDashboardPage from "../page_objects/PatientTabOpusDashboard
 let obtainedMemberID: string;
 
 When('I click on the Patient tab of the OPUS Dashboard', () => {
-    patientTabOpusDashboardPage
+    patientTabOpusDashboardPage.clickPatientTab();
 
 });
 
