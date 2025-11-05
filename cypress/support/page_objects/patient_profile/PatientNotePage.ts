@@ -24,6 +24,14 @@ class PatientNotePage extends BasePage {
     clickSaveNoteButton() {
         this.elementsPatientNotePage.saveNoteButton().click();
     }
+
+    verifyNewlyAddedNoteWasAdded(expectedNote: string) {
+        return this.elementsPatientNotePage.lstNoteDescriptions().first().then(($notes) => {
+            const actualNote = $notes.text().trim();
+            expect(actualNote).to.include(expectedNote);
+        });
+    }
+
 }
 
 const patientNotePage = new PatientNotePage();

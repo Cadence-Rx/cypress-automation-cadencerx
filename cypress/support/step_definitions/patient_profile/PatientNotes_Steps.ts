@@ -9,8 +9,8 @@ And('I click on the Add Note button', () => {
     patientNotePage.clickAddNoteButton();
 });
 
-And('I enter a note in the note text area "Entering a test note for automation"', () => {
-    patientNotePage.enterNoteText("Entering a test note for automation");
+And('I enter a note in the note text area {string}', (note: string) => {
+    patientNotePage.enterNoteText(note);
 });
 
 And('I click on the Save Note button', () => {
@@ -18,5 +18,5 @@ And('I click on the Save Note button', () => {
 });
 
 Then('I should see the newly added note in the Patient Notes tab', () => {
-    
+    patientNotePage.verifyNewlyAddedNoteWasAdded('This is a test note added via automated test.');
 });
