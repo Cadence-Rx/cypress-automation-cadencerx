@@ -12,14 +12,15 @@
     "@faker-js/faker": "^10.1.0",
     "cypress": "^15.3.0",
     "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-xpath": "^2.0.1",
     "multiple-cucumber-html-reporter": "^3.9.3",
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.3"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "cypress/support/step_definitions/*.ts",
-      "cypress/support/step_definitions/*.js "
+      "cypress/support/step_definitions/**/*.ts",
+      "cypress/support/step_definitions/**/*.js "
     ],
     "html": {
       "enabled": true,
