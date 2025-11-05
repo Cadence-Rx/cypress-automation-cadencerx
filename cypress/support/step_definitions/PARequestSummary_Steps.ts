@@ -15,4 +15,5 @@ Then('I am redirected to the PA Request Summary page with the Patient Demographi
 Then('I am redirected to the PA {string} page for that Pending Authorization', (summary: string) => {
     cy.wait(1000);
     paRequestSummaryPage.verifyPARequestSummaryHeader(summary);
+    cy.screenshot('PA_Request_Summary_Page', { capture: 'runner' });
 });
