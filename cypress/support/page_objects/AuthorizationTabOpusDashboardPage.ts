@@ -91,7 +91,7 @@ class AuthorizationTabOpusDashboardPage extends BasePage {
         this.elementsAuthorizationTabOpusDashboardPage.lstPARequestStatusButtons().then(($buttons) => {
             const buttonCount = $buttons.length;
             const randomIndex = Math.floor(Math.random() * buttonCount);
-            cy.wrap($buttons).eq(randomIndex).click();
+            cy.wrap($buttons).eq(randomIndex).invoke("removeAttr", "target").click();
         });
     }
 

@@ -18,10 +18,10 @@ class PARequestSummaryPage extends BasePage {
         return this.elementsPARequestSummaryPage.patientTabDemographics().should('have.class', 'active');
     }
 
-    verifyPARequestSummaryHeader() {
+    verifyPARequestSummaryHeader(expectedHeader: string) {
         return this.elementsPARequestSummaryPage.paRequestSummaryHeader().then(($header) => {
             const headerText = $header.text().trim();
-            expect(headerText).to.equal("PA Request Summary");
+            expect(headerText).to.equal(expectedHeader);
         });
     }
 }
