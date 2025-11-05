@@ -19,8 +19,8 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "cypress/support/step_definitions/*.ts",
-      "cypress/support/step_definitions/*.js "
+      "cypress/support/step_definitions/**/*.ts",
+      "cypress/support/step_definitions/**/*.js "
     ],
     "html": {
       "enabled": true,

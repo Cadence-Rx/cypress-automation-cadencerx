@@ -19,17 +19,18 @@ class PatientNotePage extends BasePage {
     }
 
     enterNoteText(note: string) {
-        this.elementsPatientNotePage.noteTextArea().type(note);
+        this.elementsPatientNotePage.noteTextArea().type(note, { force: true });
     }
 
     clickSaveNoteButton() {
-        this.elementsPatientNotePage.saveNoteButton().click();
+        this.elementsPatientNotePage.saveNoteButton().click({ force: true });
     }
 
     verifyNewlyAddedNoteWasAdded(expectedNote: string) {
+        this.elementsPatientNotePage.lstNoteDescriptions().last().should('be.visible');
         return this.elementsPatientNotePage.lstNoteDescriptions().first().then(($notes) => {
             const actualNote = $notes.text().trim();
-            expect(actualNote).to.include(expectedNote);
+            expect(actualNote).equals(expectedNote);
         });
     }
 

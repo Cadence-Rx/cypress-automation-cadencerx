@@ -18,6 +18,6 @@ And('I click on the Save Note button', () => {
 });
 
 Then('I should see the newly added note in the Patient Notes tab', () => {
-    patientNotePage.verifyNewlyAddedNoteWasAdded('This is a test note added via automated test.');
+    patientNotePage.verifyNewlyAddedNoteWasAdded('Entering a test note for automation');
     cy.screenshot('Patient_Note_Added', { capture: 'runner' }); 
 });
