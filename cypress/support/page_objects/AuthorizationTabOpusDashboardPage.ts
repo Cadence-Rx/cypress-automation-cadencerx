@@ -8,6 +8,7 @@ class AuthorizationTabOpusDashboardPage extends BasePage {
         columnButton: () => cy.get("button#priorAuthGrid_columnchooser"),
         lstMemeberIDs: () => cy.get("td.e-rowcell"),
         lstColumnChooserOptions: () => cy.get("span.e-label"),
+        lstPARequestStatusButtons: () => cy.get("a[href*='PriorAuthorizationRequest']")
     };
 
     verifyAuthorizationTabIsActive() {
@@ -84,6 +85,14 @@ class AuthorizationTabOpusDashboardPage extends BasePage {
             cy.writeFile('cypress/fixtures/memberIDs.json', $memberIDs);
         });
         return cy.wrap(obtainedMemberID);
+    }
+
+    clickRandomPARequestStatusButton() {
+        this.elementsAuthorizationTabOpusDashboardPage.lstPARequestStatusButtons().then(($buttons) => {
+            const buttonCount = $buttons.length;
+            const randomIndex = Math.floor(Math.random() * buttonCount);
+            cy.wrap($buttons).eq(randomIndex).click();
+        });
     }
 
 }

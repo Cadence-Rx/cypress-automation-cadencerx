@@ -27,3 +27,8 @@ And('I obtain Member ID from Authorization tab of the OPUS Dashboard', () => {
         cy.log('Obtained Member IDs:', memberIDs);
     });
 }); 
+
+
+When('I click on a random PA Request status button on the Authorization tab of the OPUS Dashboard', () => {
+
+});
