@@ -19,6 +19,7 @@ class PatientNotePage extends BasePage {
     }
 
     enterNoteText(note: string) {
+        this.elementsPatientNotePage.noteTextArea().should('be.visible');
         this.elementsPatientNotePage.noteTextArea().type(note, { force: true });
     }
 

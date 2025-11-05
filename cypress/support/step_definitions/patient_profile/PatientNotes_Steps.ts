@@ -6,6 +6,7 @@ When('I click on the Patient Notes tab', () => {
 });
 
 And('I click on the Add Note button', () => {
+    cy.wait(1000);
     patientNotePage.clickAddNoteButton();
 });
 
